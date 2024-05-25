@@ -3,6 +3,15 @@ import os
 import tempfile
 
 def install_python():
+    """
+    Installs python 3.8 and required packages
+		
+    Args:
+    	null
+		
+    Returns:
+        null
+    """
     commands = [
     "python3 --version",
     "sudo dpkg --configure -a",
@@ -27,6 +36,15 @@ def install_python():
 
 
 def create_env(env_name = 'hackathon'):
+    """
+    Creates a virtual environment 
+	 
+    Args:
+        env_name (string): the name of the venv
+	 
+    Returns:
+        null
+    """
     command = f'python3.8 -m venv {env_name}'
     try:
         subprocess.run(command, shell=True, check=True)
@@ -37,6 +55,18 @@ def create_env(env_name = 'hackathon'):
 
 
 def run_in_env(command, env_name = 'hackathon',parent_of_all_evils_folder = os.getcwd()):
+
+    """
+    Run OS commands for the venv specified
+	 
+    Args:
+        command (string): OS command to be run
+        env_name (string): the name of the venv
+        parent_of_all_evils_folder (string): the name of the parent folder of the venv, default cwd
+	 
+    Returns:
+        command respond
+    """
     current_dir = os.getcwd()
     full_command = f'cd {parent_of_all_evils_folder} && source ./{env_name}/bin/activate && cd {current_dir} && pwd && {command}'
     process = subprocess.Popen(full_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, executable='/bin/bash')
@@ -54,6 +84,18 @@ def run_in_env(command, env_name = 'hackathon',parent_of_all_evils_folder = os.g
             print('ERROR: ', line.decode('utf-8'), end='')
 
 def run_python_in_env(python_code, env_name = ,parent_of_all_evils_folder = os.getcwd()):
+
+    """
+    Write python 3.8 command for the venv specified
+	 
+    Args:
+        command (string): OS command to be run
+        env_name (string): the name of the venv
+        parent_of_all_evils_folder (string): the name of the parent folder of the venv, default cwd
+	 
+    Returns:
+        command respond
+    """
     with tempfile.NamedTemporaryFile(suffix=".py", delete=False, mode='w') as temp:
         temp.write(python_code)
         temp_filename = temp.name
