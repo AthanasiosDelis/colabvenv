@@ -15,6 +15,9 @@ setup(
     classifiers=[
         'Programming Language :: Python :: 3.8',
         'License :: OSI Approved :: MIT License',
+        'Operating System :: POSIX',
+        'Operating System :: Microsoft :: Windows :: Windows 10',
+        'Operating System :: Microsoft :: Windows :: Windows 11',
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',
     ],
