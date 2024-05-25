@@ -1,4 +1,4 @@
-# colabenv
+# colabvenv
 
 A package that creates python 3.8 virtual environments on Google  Colab and Jupyter Notebooks in Linux OS or WSL Systems.
 
@@ -7,19 +7,19 @@ A package that creates python 3.8 virtual environments on Google  Colab and Jupy
 pypi package:
 
 ```bash
-pip install colabenv
+pip install colabvenv
 ```
 
 wheel package:
 
 ```
-pip install colabenv-0.1-py3-none-any.whl
+pip install colabvenv-0.1-py3-none-any.whl
 ```
 
 ## Import
 
 ```
-from colabenv import install_python, create_env, run_in_env, run_python_in_env
+from colabvenv import install_python, create_env, run_in_env, run_python_in_env
 ```
 
 ## Functions
@@ -88,11 +88,11 @@ Copyright (c) 2024 Athanasios, Delis, Stylianos, Kandylakis. Licensed under the 
 ```bibtex
 @misc{torchkan,
   author = {Athanasios Delis, Stylianos Kandylakis},
-  title = {colabenv},
+  title = {colabvenv},
   year = {2024},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/AthanasiosDelis/colabenv/}}
+  howpublished = {\url{https://github.com/AthanasiosDelis/colabvenv/}}
 }
 ```
 
