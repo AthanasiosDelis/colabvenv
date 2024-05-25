@@ -2,11 +2,11 @@ Metadata-Version: 2.1
 Name: colabvenv
 Version: 0.1
 Summary: A package that creates python 3.8 virtual environments on Google  Colab and Jupyter Notebooks in Linux OS or WSL Systems.
-Home-page: https://github.com/athasdelis/colabvenv
+Home-page: https://github.com/AthanasiosDelis/colabvenv
 Author: Athanasios Delis, Stylianos Kandylakis
 Author-email: athanasiosdelis@gmail.com, stelkcand@gmail.com
 License: UNKNOWN
-Description: # colabenv
+Description: # colabvenv
         
         A package that creates python 3.8 virtual environments on Google  Colab and Jupyter Notebooks in Linux OS or WSL Systems.
         
@@ -15,19 +15,19 @@ Description: # colabenv
         pypi package:
         
         ```bash
-        pip install colabenv
+        pip install colabvenv
         ```
         
         wheel package:
         
         ```
-        pip install colabenv-0.1-py3-none-any.whl
+        pip install colabvenv-0.1-py3-none-any.whl
         ```
         
         ## Import
         
         ```
-        from colabenv import install_python, create_env, run_in_env, run_python_in_env
+        from colabvenv import install_python, create_env, run_in_env, run_python_in_env
         ```
         
         ## Functions
@@ -94,13 +94,13 @@ Description: # colabenv
         Copyright (c) 2024 Athanasios, Delis, Stylianos, Kandylakis. Licensed under the MIT License (the "License");
         
         ```bibtex
-        @misc{torchkan,
+        @misc{Athanasios2024,
           author = {Athanasios Delis, Stylianos Kandylakis},
-          title = {colabenv},
+          title = {colabvenv},
           year = {2024},
           publisher = {GitHub},
           journal = {GitHub repository},
-          howpublished = {\url{https://github.com/AthanasiosDelis/colabenv/}}
+          howpublished = {\url{https://github.com/AthanasiosDelis/colabvenv/}}
         }
         ```
         
