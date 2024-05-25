@@ -11,7 +11,7 @@ setup(
     description='A package that creates python 3.8 virtual environments on Google  Colab and Jupyter Notebooks in Linux OS or WSL Systems.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/athasdelis/colabvenv',
+    url='https://github.com/AthanasiosDelis/colabvenv',
     classifiers=[
         'Programming Language :: Python :: 3.8',
         'License :: OSI Approved :: MIT License',

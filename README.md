@@ -86,7 +86,7 @@ run_python_in_env(command, env_name):
 Copyright (c) 2024 Athanasios, Delis, Stylianos, Kandylakis. Licensed under the MIT License (the "License");
 
 ```bibtex
-@misc{torchkan,
+@misc{Athanasios2024,
   author = {Athanasios Delis, Stylianos Kandylakis},
   title = {colabvenv},
   year = {2024},
