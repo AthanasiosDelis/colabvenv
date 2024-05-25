@@ -35,16 +35,20 @@ def install_python():
 
 
 
-def create_env(env_name = 'hackathon'):
+def create_env(env_name = 'hackathon', parent_of_all_evils_folder = os.getcwd()):
     """
     Creates a virtual environment 
 	 
     Args:
-        env_name (string): the name of the venv
+        env_name (string): the name of the venv, default: 'hackathon'
+        parent_of_all_evils_folder (string): the name of the parent folder of the venv, default: os.getcwd()
 	 
     Returns:
-        null
+        os.getcwd()
     """
+    if not os.path.exists(parent_of_all_evils_folder):
+        os.makedirs(parent_of_all_evils_folder)
+    os.chdir(parent_of_all_evils_folder)
     command = f'python3.8 -m venv {env_name}'
     try:
         subprocess.run(command, shell=True, check=True)
@@ -57,16 +61,17 @@ def create_env(env_name = 'hackathon'):
 def run_in_env(command, env_name = 'hackathon',parent_of_all_evils_folder = os.getcwd()):
 
     """
-    Run OS commands for the venv specified
+    Run OS commands for the venv specified. Prints cwd and output of the command.
 	 
     Args:
         command (string): OS command to be run
-        env_name (string): the name of the venv
-        parent_of_all_evils_folder (string): the name of the parent folder of the venv, default cwd
+        env_name (string): the name of the venv, default: 'hackathon'
+        parent_of_all_evils_folder (string): the name of the parent folder of the venv, default: os.getcwd()
 	 
     Returns:
-        command respond
+        null
     """
+    print("cwd:")
     current_dir = os.getcwd()
     full_command = f'cd {parent_of_all_evils_folder} && source ./{env_name}/bin/activate && cd {current_dir} && pwd && {command}'
     process = subprocess.Popen(full_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True, executable='/bin/bash')
@@ -76,29 +81,29 @@ def run_in_env(command, env_name = 'hackathon',parent_of_all_evils_folder = os.g
         if output == b'' and process.poll() is not None:
             break
         if output:
-            print(output.strip().decode('utf-8'))
+            print(f"{output.strip().decode('utf-8')}")
     rc = process.poll()
 
     if process.stderr is not None:
         for line in process.stderr:
             print('ERROR: ', line.decode('utf-8'), end='')
 
-def run_python_in_env(python_code, env_name = ,parent_of_all_evils_folder = os.getcwd()):
+def run_python_in_env(python_code, env_name = 'hackathon',parent_of_all_evils_folder = os.getcwd()):
 
     """
-    Write python 3.8 command for the venv specified
+    Write python 3.8 command for the venv specified. Prints cwd and output of the program.
 	 
     Args:
         command (string): OS command to be run
-        env_name (string): the name of the venv
-        parent_of_all_evils_folder (string): the name of the parent folder of the venv, default cwd
+        env_name (string): the name of the venv, default: 'hackathon'
+        parent_of_all_evils_folder (string): the name of the parent folder of the venv, default cwd, default: os.getcwd()
 	 
     Returns:
-        command respond
+        null
     """
     with tempfile.NamedTemporaryFile(suffix=".py", delete=False, mode='w') as temp:
         temp.write(python_code)
         temp_filename = temp.name
 
-    run_in_env(f'python3 {temp_filename}', env_name)
+    run_in_env(f'python3 {temp_filename}', env_name, parent_of_all_evils_folder)
     os.remove(temp_filename)

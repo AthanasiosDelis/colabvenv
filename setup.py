@@ -8,7 +8,7 @@ setup(
     entry_points={},
     author='Athanasios Delis, Stylianos Kandylakis',
     author_email='athanasiosdelis@gmail.com, stelkcand@gmail.com',
-    description='A package to create virtual environments of Python3.8 on Google Colab and Jupyter Notebook in Linux or wsl OS systems.',
+    description='A package that creates python 3.8 virtual environments on Google  Colab and Jupyter Notebooks in Linux OS or WSL Systems.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/athasdelis/colabenv',
