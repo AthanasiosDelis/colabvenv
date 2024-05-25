@@ -13,7 +13,7 @@ pip install colabenv
 wheel package:
 
 ```
-pip install colabenv_pckg-0.1-py3-none-any.whl
+pip install colabenv-0.1-py3-none-any.whl
 ```
 
 ## Import
