@@ -38,7 +38,7 @@ install_python():
 ```
 
 ```
-create_env(env_name):
+create_env(env_name, parent_of_all_evils_folder):
     """
     Creates a virtual environment 
 	 
@@ -52,7 +52,7 @@ create_env(env_name):
 ```
 
 ```
-run_in_env(command, env_name):
+run_in_env(command, env_name, parent_of_all_evils_folder):
     """
     Run OS commands for the venv specified. Prints cwd and output of the command.
 	 
@@ -67,7 +67,7 @@ run_in_env(command, env_name):
 ```
 
 ```
-run_python_in_env(command, env_name):
+run_python_in_env(command, env_name, parent_of_all_evils_folder):
     """
     Write python 3.8 command for the venv specified. Prints cwd and output of the program.
 	 
